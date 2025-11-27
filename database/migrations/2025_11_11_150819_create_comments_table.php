@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->bigInteger('user_id');
+            $table->bigInteger('product_id');
+            $table->text('message');
+            $table->timestamp('created_at');
         });
     }
 

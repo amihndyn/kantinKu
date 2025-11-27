@@ -34,7 +34,8 @@ Route::middleware('auth')->group(function () {
     
     // Admin Routes - Hanya untuk role admin
     Route::middleware('admin')->group(function () {
-        Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        // Route::get('/dashboard', Dashboard::class)->name('dashboard');
+        
     });
     
     // Atau jika mau semua user yang login bisa akses products dengan fitur lengkap:

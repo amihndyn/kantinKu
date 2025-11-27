@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->text('message');
+            $table->enum('status', ['diterima', 'ditangani', 'selesai']);
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('feedbacks');
     }
 };

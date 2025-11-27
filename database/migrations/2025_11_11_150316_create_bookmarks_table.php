@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->bigInteger('user_id');
+            $table->bigInteger('product_id');
+            $table->timestamp('created_at');
         });
     }
 
