@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Admin Dashboard - KantinKu</title>
+    <title>{{ $title ?? 'KantinKu' }}</title>
     {{-- <link rel="icon" href="{{ asset('assets/admin/images/favicon.ico') }}"> --}}
     <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet">
     @livewireStyles

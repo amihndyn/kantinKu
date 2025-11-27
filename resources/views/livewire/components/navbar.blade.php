@@ -14,6 +14,7 @@
                 <a href="/#menu" class="text-white hover:text-[#8FABD4] transition-colors font-medium">Menu</a>
                 </div>
 
+            @guest
             <div class="hidden md:flex items-center gap-4">
                 <a href="/signIn" wire:navigate class="px-6 py-2 bg-[#8FABD4] text-white rounded-lg font-semibold hover:bg-[#0C2B4E] transition-colors">
                     Sign In
@@ -22,6 +23,15 @@
                     Sign Up
                 </a>
             </div>
+            @endguest
+            @auth
+            <div class="hidden md:flex items-center gap-4">
+                <form method="POST" action="/logout">
+                    @csrf
+                    <button class="px-6 py-2 bg-[#8FABD4] text-white rounded-lg font-semibold hover:bg-[#0C2B4E] transition-colors cursor-pointer">Logout</button>
+                </form>
+            </div>
+            @endauth
 
             <button id="menu-btn" class="md:hidden" aria-label="Toggle menu">
                 <svg xmlns="http://www.w3.org/2000/svg" id="menu-icon-open" class="w-6 h-6 text-[#0C2B4E]" fill="none"
