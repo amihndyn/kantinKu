@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Login extends Component
 {
-    public $username;
+    public $email;
     public $password;
 
     protected $rules = [
-        'username' => 'required',
+        'email' => 'required',
         'password' => 'required'
     ];
 
@@ -22,10 +22,10 @@ class Login extends Component
         $credentials = ['password' => $this->password];
 
         // Cek apakah input email atau NIM
-        if (filter_var($this->username, FILTER_VALIDATE_EMAIL)) {
-            $credentials['email'] = $this->username;
+        if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $credentials['email'] = $this->email;
         } else {
-            $credentials['nim'] = $this->username;
+            $credentials['nim'] = $this->email;
         }
 
         if (Auth::attempt($credentials)) {

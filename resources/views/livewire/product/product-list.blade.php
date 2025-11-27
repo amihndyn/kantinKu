@@ -1,4 +1,6 @@
 <div>
+    <livewire:components.navbar />
+
     <main class="pb-20" style="background-image: url('/images/bg.png'); background-size: cover; background-position: center;">
         <section id="menu" class="py-20">
             <div class="max-w-7xl mx-auto px-6">
@@ -96,6 +98,8 @@
             </div>
         </section>
     </main>
+
+    <livewire:components.footer />
 
     <!-- Product Detail Modal -->
     @if($showDetail && $selectedProduct)

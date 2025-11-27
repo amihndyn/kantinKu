@@ -18,6 +18,9 @@
                 <a href="/signIn" wire:navigate class="px-6 py-2 bg-[#8FABD4] text-white rounded-lg font-semibold hover:bg-[#0C2B4E] transition-colors">
                     Sign In
                 </a>
+                <a href="/signUp" wire:navigate class="px-6 py-2 bg-[#8FABD4] text-white rounded-lg font-semibold hover:bg-[#0C2B4E] transition-colors">
+                    Sign Up
+                </a>
             </div>
 
             <button id="menu-btn" class="md:hidden" aria-label="Toggle menu">

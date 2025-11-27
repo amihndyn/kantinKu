@@ -1,10 +1,11 @@
 <?php
 
+use App\Livewire\Auth\Register;
 use App\Livewire\HomePage;
 use App\Livewire\Auth\Login;
 use App\Livewire\Product\ProductList;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Dashboard;
 use App\Livewire\Product\ProductDetail;
 
 // Homepage - Public
@@ -16,7 +17,8 @@ Route::get('/products/{product}', ProductDetail::class)->name('products.show');
 
 // Authentication Routes - Hanya untuk guest (belum login)
 Route::middleware('guest')->group(function () {
-    Route::get('/signIn', Login::class);
+    Route::get('/signIn', Login::class)->name('login');
+    Route::get('/signUp', Register::class)->name('register');
 });
 
 // Logout Route - Untuk yang sudah login
